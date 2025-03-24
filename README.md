@@ -13,8 +13,11 @@ This project implements a web-based quiz application using Flask. Users can regi
 
 ### Dependencies
 
+Have these installed 
 ```
 pip install -r requirements.txt
+
+pip install flask werkzueg
 ```
 
 More requirements is to download the dataset which can be found at https://www.kaggle.com/datasets/puzanov/top-200-universities-in-north-america?resource=download. 
