@@ -2,7 +2,7 @@ from flask import Flask, render_template, request, redirect, url_for, session
 import db
 
 app = Flask(__name__)
-app.secret_key = "your_secret_key"  # Replace with a secure key
+app.secret_key = "SECRET_KEY"
 
 @app.route("/")
 def home():
@@ -44,11 +44,11 @@ def quiz():
     score = 0
     if request.method == "POST":
         for question in questions:
-            user_answer = request.form.get(question[0])  # Get the answer for each question
+            user_answer = request.form.get(question[0])
             if user_answer and user_answer.lower() == question[1].lower():
-                score += 1  # Increment score for correct answers
-        session['score'] = score  # Save the score in session
-        return redirect(url_for("results"))  # Redirect to results page
+                score += 1
+        session['score'] = score
+        return redirect(url_for("results"))
     return render_template("quiz.html", questions=questions)
 
 
