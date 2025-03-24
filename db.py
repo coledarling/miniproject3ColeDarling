@@ -29,6 +29,16 @@ def init_db():
     )
     """)
 
+    # Insert sample quiz questions if they do not exist
+    c.execute("SELECT COUNT(*) FROM quiz")
+    if c.fetchone()[0] == 0:
+        questions = [
+            ("What is the capital of France?", "Paris"),
+            ("What is 2 + 2?", "4"),
+            ("What color is the sky?", "blue")
+        ]
+        c.executemany("INSERT INTO quiz (question, answer) VALUES (?, ?)", questions)
+
     conn.commit()
     conn.close()
 
