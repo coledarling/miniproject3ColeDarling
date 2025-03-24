@@ -29,7 +29,6 @@ The app uses SQLite for storing user credentials and quiz questions. The databas
 1. Clone the repository to your local machine.
 2. Open a terminal and navigate to the project directory.
 3. Execute the following command:
-4. 
 ```
 python app.py
 ```
