@@ -51,6 +51,8 @@ def quiz():
         return redirect(url_for("results"))  # Redirect to results page
     return render_template("quiz.html", questions=questions)
 
+
+
 @app.route("/results")
 def results():
     """Show quiz results."""

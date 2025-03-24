@@ -1,5 +1,6 @@
 import sqlite3
 
+
 DATABASE = "quiz.db"
 
 def connect_db():
