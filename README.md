@@ -7,7 +7,7 @@
 
 ## Description
 
-This project implements a web-based quiz application using Flask. Users can register, log in, and take a quiz on general knowledge questions. The app includes the following functionalities:
+This project implements a web-based quiz application using Flask. Users can register, log in, and take a quiz on general knowledge questions.
 
 ## Getting Started
 
