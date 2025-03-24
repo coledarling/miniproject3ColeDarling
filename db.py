@@ -11,7 +11,7 @@ def init_db():
     conn = connect_db()
     c = conn.cursor()
 
-    # Create the users table
+    # Create Users Table
     c.execute("""
     CREATE TABLE IF NOT EXISTS users (
         id INTEGER PRIMARY KEY AUTOINCREMENT,
@@ -20,7 +20,7 @@ def init_db():
     )
     """)
 
-    # Create the quiz table
+    # Create Quiz Table
     c.execute("""
     CREATE TABLE IF NOT EXISTS quiz (
         id INTEGER PRIMARY KEY AUTOINCREMENT,
@@ -29,7 +29,7 @@ def init_db():
     )
     """)
 
-    # Insert sample quiz questions if they do not exist
+    # Insert Sample Quiz Questions
     c.execute("SELECT COUNT(*) FROM quiz")
     if c.fetchone()[0] == 0:
         questions = [
@@ -50,7 +50,7 @@ def insert_user(username, password):
         c.execute("INSERT INTO users (username, password) VALUES (?, ?)", (username, password))
         conn.commit()
     except sqlite3.IntegrityError:
-        return False  # Username already exists
+        return False
     finally:
         conn.close()
     return True

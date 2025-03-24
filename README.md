@@ -19,21 +19,31 @@ pip install -r requirements.txt
 
 pip install flask werkzueg
 ```
+**DataBase Setup**
 
-More requirements is to download the dataset which can be found at https://www.kaggle.com/datasets/puzanov/top-200-universities-in-north-america?resource=download. 
-
-In order to download this dataset you will click on the link and then click the black download button on the right hand side of the website that is right under the sign in option.
+The app uses SQLite for storing user credentials and quiz questions. The database () is initialized automatically when the application is first run.
 
 
 ### Executing program
 
+1. Clone the repository to your local machine.
+2. Open a terminal and navigate to the project directory.
+3. Execute the following command:
+4. 
 ```
-python main.py
+python app.py
 ```
+
 
 ### Output
 
-This should create a graph within the charts folder, displaying the top 200 universities by rank.
+Users can:
+
+* Register for an account.
+* Log in and securely access the quiz page.
+* Answer basic questions.
+* View their score at the end.
+
 
 ## Authors
 
@@ -42,3 +52,10 @@ Contributors names and contact info
 ex. Cole Darling
 
 ### Acknowledgements
+
+Bootstrap: https://getbootstrap.com/
+Werkzeug: https://werkzeug.palletsprojects.com/en/stable/
+Flask
+SQLite
+Jason Zeller: https://www.youtube.com/watch?v=hgksEFTvvUs
+ChatGPT: https://chatgpt.com/share/67e0facd-e974-800b-9827-89496f011174

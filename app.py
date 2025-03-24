@@ -59,9 +59,9 @@ def quiz():
             answer = request.form.get(f"question_{question['id']}")
             if answer and answer.strip().lower() == question['answer'].lower():
                 score += 1
-        session["score"] = score  # Store score in session
-        session["total"] = len(questions)  # Store total in session
-        return redirect(url_for("results"))  # Redirect to the results page
+        session["score"] = score
+        session["total"] = len(questions)
+        return redirect(url_for("results"))
 
     return render_template("quiz.html", questions=questions)
 
@@ -72,8 +72,8 @@ def results():
     if "score" not in session or "total" not in session:
         return redirect(url_for("quiz"))
 
-    score = session.get("score")  # Retrieve score
-    total = session.get("total")  # Retrieve total
+    score = session.get("score")
+    total = session.get("total")
     return render_template("results.html", score=score, total=total)
 
 if __name__ == "__main__":
