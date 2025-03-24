@@ -52,9 +52,9 @@ ex. Cole Darling
 
 ### Acknowledgements
 
-Bootstrap: https://getbootstrap.com/
-Werkzeug: https://werkzeug.palletsprojects.com/en/stable/
-Flask
-SQLite
-Jason Zeller: https://www.youtube.com/watch?v=hgksEFTvvUs
-ChatGPT: https://chatgpt.com/share/67e0facd-e974-800b-9827-89496f011174
+* Bootstrap: https://getbootstrap.com/
+* Werkzeug: https://werkzeug.palletsprojects.com/en/stable/
+* Flask: https://flask.palletsprojects.com/en/stable/
+* SQLite: https://www.sqlite.org/download.html?form=MG0AV3
+* Jason Zeller: https://www.youtube.com/watch?v=hgksEFTvvUs
+* ChatGPT: https://chatgpt.com/share/67e0facd-e974-800b-9827-89496f011174
