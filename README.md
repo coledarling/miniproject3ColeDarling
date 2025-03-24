@@ -17,7 +17,7 @@ Have these installed
 ```
 pip install -r requirements.txt
 
-pip install flask werkzueg
+pip install flask werkzeug
 ```
 **DataBase Setup**
 
