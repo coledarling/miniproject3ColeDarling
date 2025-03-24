@@ -1,5 +1,4 @@
 <!DOCTYPE html>
-
 <html lang="en">
 <head>
     <title>Results</title>
@@ -9,8 +8,11 @@
     <div class="container mt-5 text-center">
         <h2>Quiz Results</h2>
         <h4>Your Score: {{ score }}/{{ total }}</h4>
-        <a href="{{ url_for('quiz') }}" class="btn btn-primary">Play Again</a>
-        <a href="{{ url_for('home') }}" class="btn btn-secondary">Go Home</a>
+        <p class="mt-3">Great job! Want to try again or head home?</p>
+        <div class="mt-4">
+            <a href="{{ url_for('quiz') }}" class="btn btn-primary">Play Again</a>
+            <a href="{{ url_for('home') }}" class="btn btn-secondary">Go Home</a>
+        </div>
     </div>
 </body>
 </html>

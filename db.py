@@ -1,6 +1,5 @@
 import sqlite3
 
-
 DATABASE = "quiz.db"
 
 def connect_db():
@@ -11,13 +10,25 @@ def init_db():
     """Initialize the database and create necessary tables."""
     conn = connect_db()
     c = conn.cursor()
-    c.execute("""CREATE TABLE IF NOT EXISTS users (
-                id INTEGER PRIMARY KEY AUTOINCREMENT,
-                username TEXT UNIQUE,
-                password TEXT)""")
-    c.execute("""CREATE TABLE IF NOT EXISTS quiz (
-                question TEXT,
-                answer TEXT)""")
+
+    # Create the users table
+    c.execute("""
+    CREATE TABLE IF NOT EXISTS users (
+        id INTEGER PRIMARY KEY AUTOINCREMENT,
+        username TEXT UNIQUE NOT NULL,
+        password TEXT NOT NULL
+    )
+    """)
+
+    # Create the quiz table
+    c.execute("""
+    CREATE TABLE IF NOT EXISTS quiz (
+        id INTEGER PRIMARY KEY AUTOINCREMENT,
+        question TEXT NOT NULL,
+        answer TEXT NOT NULL
+    )
+    """)
+
     conn.commit()
     conn.close()
 
@@ -34,20 +45,22 @@ def insert_user(username, password):
         conn.close()
     return True
 
-def get_user(username, password):
-    """Retrieve a user from the database based on credentials."""
+def get_user(username):
+    """Retrieve a user from the database."""
     conn = connect_db()
     c = conn.cursor()
-    c.execute("SELECT * FROM users WHERE username = ? AND password = ?", (username, password))
+    c.execute("SELECT * FROM users WHERE username = ?", (username,))
     user = c.fetchone()
     conn.close()
-    return user
+    if user:
+        return {"username": user[1], "password": user[2]}
+    return None
 
 def fetch_questions():
     """Fetch all quiz questions from the database."""
     conn = connect_db()
     c = conn.cursor()
-    c.execute("SELECT * FROM quiz")
-    questions = c.fetchall()
+    c.execute("SELECT id, question, answer FROM quiz")
+    questions = [{"id": row[0], "question": row[1], "answer": row[2]} for row in c.fetchall()]
     conn.close()
     return questions
